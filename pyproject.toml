@@ -1,0 +1,43 @@
+
+[tool.poetry]
+name = "poet"
+version = "0.1.0"
+description = "poet"
+license = "MIT"
+readme = "README.md"
+packages = [{ include = "src" }]
+
+[tool.poetry.dependencies]
+python = ">=3.10,<4.0"
+pandas = "^2.2.2"
+scikit-learn = "^1.4.2"
+numpy = "^1.26.4"
+
+
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^24.4.2"
+mypy = "^1.10.0"
+flake8 = "^7.0.0"
+isort = "^5.13.2"
+pre-commit = "^3.7.0"
+pytest = "^8.2.0"
+ipykernel = "^6.29.4"
+
+
+[tool.poetry.scripts]
+train = "poet.cli:train"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 88
+target-version = ["py312"]
+
+[tool.isort]
+profile = "black"
+
+
